@@ -1,24 +1,26 @@
 # FTC-2015-ResQ-4345
 FTC Android Studio project to create FTC Robot Controller app.
 
-This is the FTC SDK that can be used to create an FTC Robot Controller app, with custom op modes.
-The FTC Robot Controller app is designed to work in conjunction with the FTC Driver Station app.
-The FTC Driver Station app is available through Google Play.
+#### Programmers
+Miles P. `mpolson64` Olson  
+Chris `SourMongoose` Xiong  
+Sahith `sahith00` Bhamidipati
 
-To use this SDK, download/clone the entire project to your local computer.
-Use Android Studio to import the folder  ("Import project (Eclipse ADT, Gradle, etc.)").
+This is the FTC Robot Controller app created by ART.Leonardo for use competing the 2015 FTC game ResQ.
+The core of the app comes from the FTC SDK provided to all teams, and is designed to work in conjunction with the FTC Driver Station app, which is availible through Google Play.
+All custom, ART subsystems and OpModes can be found in the edu.artLeonardo.* package.
+
+The code follows a semi-modular structure, with classes created for each physical subsystem on the robot that control each actuator, read each sensor, and run each control algorithm in independent objects.
+Each behavior (teleoperated configurations, autonomous strategies, etc.) create instances of the objects; this system allows for simple control of the robot across many distinct behavioral mode and therefore very streamlined coding.
 
 Documentation for the FTC SDK are included with this repository.  There is a subfolder called "doc" which contains several subfolders:
 
  * The folder "apk" contains the .apk files for the FTC Driver Station and FTC Robot Controller apps.
  * The folder "javadoc" contains the JavaDoc user documentation for the FTC SDK.
  * The folder "tutorial" contains PDF files that help teach the basics of using the FTC SDK.
-
-For technical questions regarding the SDK, please visit the FTC Technology forum:
-
-  http://ftcforum.usfirst.org/forumdisplay.php?156-FTC-Technology
-
+ 
 **************************************************************************************
+## SDK Patch Notes
 
 Release 15.11.04.001
 
