@@ -18,4 +18,12 @@ public class Drivetrain {
         leftDrive.setPower(leftPower);
         rightDrive.setPower(rightPower);
     }
+
+    public void arcadeDrive(float power, float turn) {
+        float leftPower = power + turn;
+        float rightPower = power - turn;
+
+        leftDrive.setPower(leftPower);
+        rightDrive.setPower(rightPower);
+    }
 }
