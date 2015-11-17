@@ -18,6 +18,9 @@ public class DrivetrainTest extends OpMode{
 
     @Override
     public void loop() {
-        drivetrain.arcadeDrive(-1 * gamepad1.left_stick_y, gamepad1.right_stick_x);
+        if(gamepad1.a)
+            drivetrain.driveTank(-1 * gamepad1.left_stick_y, -1 * gamepad1.right_stick_y);
+        else
+            drivetrain.arcadeDrive(-1 * gamepad1.left_stick_y, gamepad1.right_stick_x);
     }
 }
