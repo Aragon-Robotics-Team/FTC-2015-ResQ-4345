@@ -28,6 +28,8 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
+import edu.art._4345.resQ.opModes.DrivetrainTest;
+
 /**
  * Register Op Modes.
  * If two Op Modes share a name, the app will register an error, so be careful.
@@ -36,5 +38,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     public void register(OpModeManager manager) {
         manager.register("NullOp", NullOp.class);
+
+        manager.register("Drivetrain Test", DrivetrainTest.class);
     }
 }
