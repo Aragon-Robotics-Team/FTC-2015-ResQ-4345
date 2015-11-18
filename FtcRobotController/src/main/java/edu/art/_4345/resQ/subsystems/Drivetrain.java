@@ -1,6 +1,7 @@
 package edu.art._4345.resQ.subsystems;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.Range;
 
 public class Drivetrain {
 
@@ -20,8 +21,8 @@ public class Drivetrain {
     }
 
     public void arcadeDrive(float power, float turn) {
-        float leftPower = power + turn;
-        float rightPower = power - turn;
+        float leftPower = Range.clip(power + turn, -1, 1);
+        float rightPower = Range.clip(power - turn, -1, 1);
 
         leftDrive.setPower(leftPower);
         rightDrive.setPower(rightPower);
