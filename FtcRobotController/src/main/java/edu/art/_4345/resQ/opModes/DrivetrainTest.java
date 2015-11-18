@@ -13,7 +13,7 @@ public class DrivetrainTest extends OpMode{
 
     @Override
     public void init() {
-        drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_motor"), hardwareMap.dcMotor.get("right_motor"));
+        drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_drive"), hardwareMap.dcMotor.get("right_drive"));
     }
 
     @Override
