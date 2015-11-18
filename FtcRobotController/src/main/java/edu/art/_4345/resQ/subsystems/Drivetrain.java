@@ -14,7 +14,7 @@ public class Drivetrain {
         rightDrive.setDirection(DcMotor.Direction.REVERSE);
     }
 
-    public void driveTank(float leftPower, float rightPower) {
+    public void tankDrive(float leftPower, float rightPower) {
         leftDrive.setPower(leftPower);
         rightDrive.setPower(rightPower);
     }
