@@ -19,9 +19,8 @@ public class TriggerFlipper {
         flipper.setPosition(0);
     }
 
-    public void stowRight(){
-        flipper.setPosition(1);
-    }
+    public void stowRight() { flipper.setPosition(1); }
+
     public void extend(){
         flipper.setPosition(0.5);
     }
