@@ -4,21 +4,27 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Winch {
 
-    private DcMotor hookMotor, pullMotor;
+    private DcMotor extendMotor, aimMotor, pullMotor;
 
-    public Winch(DcMotor hookMotor, DcMotor pullMotor) {
-        this.hookMotor = hookMotor;
+    public Winch(DcMotor extendMotor, DcMotor aimMotor, DcMotor pullMotor) {
+        this.extendMotor = extendMotor;
+        this.aimMotor = aimMotor;
         this.pullMotor = pullMotor;
 
-        this.hookMotor.setDirection(DcMotor.Direction.FORWARD);
+        this.extendMotor.setDirection(DcMotor.Direction.FORWARD);
+        this.aimMotor = aimMotor;
         this.pullMotor.setDirection(DcMotor.Direction.FORWARD);
     }
 
-    public void hook(double power) {
-        hookMotor.setPower(power);
+    public void extend(double power) {
+        extendMotor.setPower(power);
+    }
+
+    public void aim(double power) {
+        aimMotor.setPower(power);
     }
 
     public void pull(double power) {
-        hookMotor.setPower(power);
+        pullMotor.setPower(power);
     }
 }
