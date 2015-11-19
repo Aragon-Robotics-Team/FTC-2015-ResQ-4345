@@ -9,19 +9,19 @@ public class TriggerFlipper {
 
     private Servo flipper;
 
+    private final double EXTENSION_POINT = 6.0 / 13.0;
+
     public TriggerFlipper(Servo flipper){
         this.flipper = flipper;
 
-        this.flipper.scaleRange(0, 1);
+        this.flipper.scaleRange(0, EXTENSION_POINT);
     }
 
-    public void stowLeft() {
+    public void stow() {
         flipper.setPosition(0);
     }
 
-    public void stowRight() { flipper.setPosition(1); }
-
     public void extend(){
-        flipper.setPosition(0.5);
+        flipper.setPosition(1);
     }
 }
