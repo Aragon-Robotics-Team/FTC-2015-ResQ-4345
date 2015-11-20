@@ -24,4 +24,8 @@ public class TriggerFlipper {
     public void extend(){
         flipper.setPosition(1);
     }
+
+    public double getPosition() {
+        return flipper.getPosition();
+    }
 }

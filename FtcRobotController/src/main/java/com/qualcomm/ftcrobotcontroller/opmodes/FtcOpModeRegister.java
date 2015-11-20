@@ -29,6 +29,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import edu.art._4345.resQ.opModes.DrivetrainTest;
+import edu.art._4345.resQ.opModes.TriggerFlipperTest;
 
 /**
  * Register Op Modes.
@@ -40,5 +41,6 @@ public class FtcOpModeRegister implements OpModeRegister {
         manager.register("NullOp", NullOp.class);
 
         manager.register("Drivetrain Test", DrivetrainTest.class);
+        manager.register("Tirgger Flipper Test", TriggerFlipperTest.class);
     }
 }
