@@ -9,7 +9,7 @@ public class TriggerFlipper {
 
     private Servo flipper;
 
-    private final double EXTENSION_POINT = 6.0 / 13.0;
+    private final double EXTENSION_POINT = 100.0 / 195.0;
 
     public TriggerFlipper(Servo flipper){
         this.flipper = flipper;
