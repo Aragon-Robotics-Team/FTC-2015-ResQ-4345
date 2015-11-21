@@ -4,8 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import edu.art._4345.resQ.subsystems.Drivetrain;
 
-import java.lang.Math;
-
 /**
  * A very simple autonomous op mode that drives into the parking zone.
  */
@@ -16,20 +14,20 @@ public class SimpleAutonomous extends LinearOpMode {
     private final double INCHES_PER_SECOND = 5; //dummy value
     private final double SECONDS_PER_ROTATION = 5; //dummy value
 
-    private final int SQUARE = 3; //squares from mountain (3 and 4 are next to middle)
+    private final int SQUARES = 3; //squares from mountain (3 and 4 are next to middle)
 
     @Override
     public void runOpMode() throws InterruptedException {
         drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_drive"), hardwareMap.dcMotor.get("right_drive"));
 
-        if(SQUARE == 3) {
+        if(SQUARES == 3) {
             driveForward(27);
             turnCounterclockwise(45);
             driveForward(33.94);
             turnCounterclockwise(45);
             driveForward(27);
         }
-        else if(SQUARE == 4) {
+        else if(SQUARES == 4) {
             driveForward(15);
             turnCounterclockwise(45);
             driveForward(50.91);
