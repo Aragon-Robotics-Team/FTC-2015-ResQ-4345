@@ -15,6 +15,7 @@ public class SimpleAutonomous extends LinearOpMode {
     private final double SECONDS_PER_ROTATION = 5; //dummy value
 
     private final int SQUARES = 3; //squares from mountain (3 and 4 are next to middle)
+    private final boolean onRedTeam = true;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -46,6 +47,13 @@ public class SimpleAutonomous extends LinearOpMode {
         drivetrain.arcadeDrive(1, 0);
         wait(1000 * doubleToLong(inches / INCHES_PER_SECOND));
         drivetrain.tankDrive(0, 0);
+    }
+
+    private void turn(double degrees) throws InterruptedException {
+        if (onRedTeam)
+            turnCounterclockwise(degrees);
+        else
+            turnClockwise(degrees);
     }
 
     private void turnCounterclockwise(double degrees) throws InterruptedException {
