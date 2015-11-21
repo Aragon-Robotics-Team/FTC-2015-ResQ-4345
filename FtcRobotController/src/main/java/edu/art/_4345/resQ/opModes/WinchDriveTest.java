@@ -29,6 +29,9 @@ public class WinchDriveTest extends OpMode{
         winch.tape(2 * (gamepad2.left_trigger - 0.5) * winch.tapePower);
         winch.pulley(2 * (gamepad2.right_trigger - 0.5) * winch.pulleyPower);
 
+        //aiming tape measure
+        winch.aim(gamepad2.left_stick_y);
+
         //controlling tape motor speed
         if(gamepad2.dpad_up)
             winch.changeTapePower(INCREMENT);
