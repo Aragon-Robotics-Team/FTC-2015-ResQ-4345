@@ -20,13 +20,9 @@ public class WinchTest extends OpMode{
 
     @Override
     public void loop() {
-        //extending tape meausre and string
-        if(gamepad1.right_trigger == 1.0)
-            winch.extend(1.0);
-        else if(gamepad1.right_bumper)
-            winch.extend(-1.0);
-        else
-            winch.extend(0);
+        //retracting/extending tape measure & string independently
+        winch.tape(2 * (gamepad1.left_trigger - 0.5) * winch.tapePower);
+        winch.pulley(2 * (gamepad1.right_trigger - 0.5) * winch.pulleyPower);
 
         //controlling tape motor speed
         if(gamepad1.dpad_up)

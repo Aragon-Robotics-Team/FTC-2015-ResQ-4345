@@ -18,7 +18,7 @@ public class Winch {
         this.aimMotor.setDirection(DcMotor.Direction.FORWARD);
         this.pulleyMotor.setDirection(DcMotor.Direction.FORWARD);
 
-        tapePower = 1.0;
+        tapePower = 0.25;
         pulleyPower = 1.0;
     }
 
