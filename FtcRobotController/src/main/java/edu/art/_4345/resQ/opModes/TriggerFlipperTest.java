@@ -7,7 +7,7 @@ import edu.art._4345.resQ.subsystems.TriggerFlipper;
 /**
  * Created by member on 11/19/15.
  */
-public class TriggerFlipperTest extends OpMode{
+public class TriggerFlipperTest extends OpMode {
 
     TriggerFlipper flipperLeft;
     TriggerFlipper flipperRight;
