@@ -30,7 +30,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import edu.art._4345.resQ.opModes.DrivetrainTest;
 import edu.art._4345.resQ.opModes.TriggerFlipperTest;
-import edu.art._4345.resQ.opModes.DrivetrainFlipperOnly;
+import edu.art._4345.resQ.opModes.DriveTriggerOnly;
 
 /**
  * Register Op Modes.
@@ -43,6 +43,6 @@ public class FtcOpModeRegister implements OpModeRegister {
 
         manager.register("Drivetrain Test", DrivetrainTest.class);
         manager.register("Trigger Flipper Test", TriggerFlipperTest.class);
-        manager.register("Drivetrain and Trigger", .DrivetrainTest.class);
+        manager.register("Drivetrain and Trigger", DriveTriggerOnly.class);
     }
 }
