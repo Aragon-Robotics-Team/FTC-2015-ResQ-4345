@@ -19,7 +19,7 @@ public class TriggerFlipperTest extends OpMode{
     @Override
     public void loop() {
         if (gamepad1.left_bumper) {
-            if (flipper.getPosition() < 0.5) {
+            if (!flipper.isExtended()) {
                 flipper.extend();
                 while(gamepad1.left_bumper);
             }

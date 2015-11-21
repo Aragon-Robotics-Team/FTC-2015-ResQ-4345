@@ -41,6 +41,6 @@ public class FtcOpModeRegister implements OpModeRegister {
         manager.register("NullOp", NullOp.class);
 
         manager.register("Drivetrain Test", DrivetrainTest.class);
-        manager.register("Tirgger Flipper Test", TriggerFlipperTest.class);
+        manager.register("Trigger Flipper Test", TriggerFlipperTest.class);
     }
 }

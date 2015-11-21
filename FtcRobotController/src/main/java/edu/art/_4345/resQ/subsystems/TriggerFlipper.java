@@ -8,24 +8,27 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class TriggerFlipper {
 
     private Servo flipper;
+    private boolean extended;
 
-    private final double EXTENSION_POINT = 100.0 / 195.0;
+    private final double EXTENSION_POINT = 95.0 / 195.0;
 
     public TriggerFlipper(Servo flipper){
         this.flipper = flipper;
 
-        this.flipper.scaleRange(0, EXTENSION_POINT);
+        this.flipper.scaleRange(EXTENSION_POINT, 1.0);
     }
 
     public void stow() {
-        flipper.setPosition(0);
+        flipper.setPosition(1);
+        extended = false;
     }
 
     public void extend(){
-        flipper.setPosition(1);
+        flipper.setPosition(0);
+        extended = true;
     }
 
-    public double getPosition() {
-        return flipper.getPosition();
+    public boolean isExtended() {
+        return extended;
     }
 }
