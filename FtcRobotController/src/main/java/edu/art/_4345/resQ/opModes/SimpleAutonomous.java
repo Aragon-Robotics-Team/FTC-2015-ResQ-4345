@@ -25,29 +25,23 @@ public class SimpleAutonomous extends LinearOpMode {
 
         if(SQUARES == 3) {
             driveForward(27);
-            turnCounterclockwise(45);
+            turn(45);
             driveForward(33.94);
-            turnCounterclockwise(45);
+            turn(45);
             driveForward(27);
         }
         else if(SQUARES == 4) {
             driveForward(15);
-            turnCounterclockwise(45);
+            turn(45);
             driveForward(50.91);
-            turnCounterclockwise(45);
+            turn(45);
             driveForward(39);
         }
     }
 
-    private long doubleToLong(double d) {
-        long l;
-        for (l = 0; l < d; l++);
-        return l;
-    }
-
     private void driveForward(double inches) throws InterruptedException {
         drivetrain.arcadeDrive(1, 0);
-        sleep(1000 * doubleToLong(inches / INCHES_PER_SECOND));
+        sleep(1000 * (long)(inches / INCHES_PER_SECOND));
         drivetrain.tankDrive(0, 0);
     }
 
@@ -60,13 +54,13 @@ public class SimpleAutonomous extends LinearOpMode {
 
     private void turnCounterclockwise(double degrees) throws InterruptedException {
         drivetrain.arcadeDrive(0, -1);
-        sleep(1000 * doubleToLong((degrees / 360) * SECONDS_PER_ROTATION));
+        sleep(1000 * (long)((degrees / 360) * SECONDS_PER_ROTATION));
         drivetrain.arcadeDrive(0, 0);
     }
 
     private void turnClockwise(double degrees) throws InterruptedException {
         drivetrain.arcadeDrive(0, 1);
-        sleep(1000 * doubleToLong((degrees / 360) * SECONDS_PER_ROTATION));
+        sleep(1000 * (long)((degrees / 360) * SECONDS_PER_ROTATION));
         drivetrain.arcadeDrive(0, 0);
     }
 }
