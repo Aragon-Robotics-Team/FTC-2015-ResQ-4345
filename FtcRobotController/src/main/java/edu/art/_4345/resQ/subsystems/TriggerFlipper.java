@@ -12,10 +12,13 @@ public class TriggerFlipper {
 
     private final double EXTENSION_POINT = 95.0 / 195.0;
 
-    public TriggerFlipper(Servo flipper){
+    public TriggerFlipper(Servo flipper, boolean isLeftFlipper){
         this.flipper = flipper;
 
-        this.flipper.scaleRange(EXTENSION_POINT, 1.0);
+        if (!isLeftFlipper)
+            this.flipper.scaleRange(0, EXTENSION_POINT);
+        else
+            this.flipper.scaleRange(EXTENSION_POINT, 1);
     }
 
     public void stow() {

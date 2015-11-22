@@ -42,7 +42,7 @@ public class Winch {
     }
 
     public void aim(double power) {
-        if(power < 0)
+        if(power > 0)
             aimMotor.setPower(AIM_POWER_FORWARD * power);
         else
             aimMotor.setPower(AIM_POWER_BACK * power);

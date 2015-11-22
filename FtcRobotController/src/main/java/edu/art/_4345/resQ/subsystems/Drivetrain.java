@@ -21,8 +21,8 @@ public class Drivetrain {
     }
 
     public void arcadeDrive(float power, float turn) {
-        float leftPower = Range.clip(power + turn, -1, 1);
-        float rightPower = Range.clip(power - turn, -1, 1);
+        float leftPower = Range.clip(power - turn, -1, 1);
+        float rightPower = Range.clip(power + turn, -1, 1);
 
         leftDrive.setPower(leftPower);
         rightDrive.setPower(rightPower);

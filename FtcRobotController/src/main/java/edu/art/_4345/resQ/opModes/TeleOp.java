@@ -19,8 +19,8 @@ public class TeleOp extends OpMode {
     public void init() {
         winch = new Winch(hardwareMap.dcMotor.get("tape_motor"), hardwareMap.dcMotor.get("aim_motor"), hardwareMap.dcMotor.get("pulley_motor"));
         drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_drive"), hardwareMap.dcMotor.get("right_drive"));
-        leftFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"));
-        rightFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"));
+        leftFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"), true);
+        rightFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"), false);
     }
 
     @Override
@@ -30,9 +30,9 @@ public class TeleOp extends OpMode {
 
 
         //trigger flipper control
-        if(gamepad2.x) {
+        if(gamepad2.a) {
             leftFlipper.toggle();
-            while(gamepad2.x);
+            while(gamepad2.a);
         }
         else if(gamepad2.b) {
             rightFlipper.toggle();
@@ -62,7 +62,7 @@ public class TeleOp extends OpMode {
         //controlling pulley motor speed
         if(gamepad2.y)
             winch.changePulleyPower(INCREMENT);
-        else if(gamepad2.a)
+        else if(gamepad2.x)
             winch.changePulleyPower(-INCREMENT);
 
         telemetry.addData("Tape power: ", winch.tapePower);

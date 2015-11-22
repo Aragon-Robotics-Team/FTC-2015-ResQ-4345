@@ -14,8 +14,8 @@ public class TriggerFlipperTest extends OpMode {
 
     @Override
     public void init() {
-        flipperLeft = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"));
-        flipperRight = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"));
+        flipperLeft = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"), true);
+        flipperRight = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"), false);
     }
 
     @Override
