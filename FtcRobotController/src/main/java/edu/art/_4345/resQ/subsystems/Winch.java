@@ -7,6 +7,7 @@ public class Winch {
 
     private DcMotor tapeMotor, aimMotor, pulleyMotor;
 
+    private final double AIM_POWER = 0.05;
     public double tapePower, pulleyPower;
 
     public Winch(DcMotor tapeMotor, DcMotor aimMotor, DcMotor pulleyMotor) {
@@ -40,7 +41,7 @@ public class Winch {
     }
 
     public void aim(double power) {
-        aimMotor.setPower(power);
+        aimMotor.setPower(AIM_POWER * power);
     }
 
     public void pulley(double power) {
