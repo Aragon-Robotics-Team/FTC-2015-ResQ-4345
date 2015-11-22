@@ -1,6 +1,7 @@
 package edu.art._4345.resQ.opModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.Gamepad;
 
 import edu.art._4345.resQ.subsystems.*;
 
@@ -12,6 +13,9 @@ public class TeleOp extends OpMode {
     private Winch winch;
     private Drivetrain drivetrain;
     private TriggerFlipper leftFlipper, rightFlipper;
+
+    private Gamepad driver = gamepad1, controller = gamepad2;
+    private boolean driverIs1 = true;
 
     private final double INCREMENT = 0.005;
 
@@ -25,44 +29,59 @@ public class TeleOp extends OpMode {
 
     @Override
     public void loop() {
+        //switching driver/controller
+        if(driver.start || controller.start) {
+            if(driverIs1) {
+                driver = gamepad2;
+                controller = gamepad1;
+            }
+            else {
+                driver = gamepad1;
+                controller = gamepad2;
+            }
+            driverIs1 = !driverIs1;
+            while(driver.start || controller.start);
+        }
+
+
         //driving
-        drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+        drivetrain.arcadeDrive(driver.left_stick_y, driver.right_stick_x);
 
 
         //trigger flipper control
-        if(gamepad2.a) {
+        if(controller.a) {
             leftFlipper.toggle();
-            while(gamepad2.a);
+            while(controller.a);
         }
-        else if(gamepad2.b) {
+        else if(controller.b) {
             rightFlipper.toggle();
-            while(gamepad2.b);
+            while(controller.b);
         }
 
         //retracting/extending tape measure & string independently
-        winch.tape(gamepad2.left_stick_y * winch.tapePower);
-        winch.pulley(gamepad2.right_stick_y * winch.pulleyPower);
+        winch.tape(controller.left_stick_y * winch.tapePower);
+        winch.pulley(controller.right_stick_y * winch.pulleyPower);
 
         //aiming tape measure
-        if (gamepad2.left_bumper)
+        if (controller.left_bumper)
             winch.aim(1);
-        else if(gamepad2.left_trigger > 0.5)
+        else if(controller.left_trigger > 0.5)
             winch.aim(-1);
         else
             winch.aim(0);
 
         //controlling tape motor speed
-        if(gamepad2.dpad_up) {
+        if(controller.dpad_up) {
             winch.changeTapePower(INCREMENT);
         }
-        else if(gamepad2.dpad_down) {
+        else if(controller.dpad_down) {
             winch.changeTapePower(-INCREMENT);
         }
 
         //controlling pulley motor speed
-        if(gamepad2.y)
+        if(controller.y)
             winch.changePulleyPower(INCREMENT);
-        else if(gamepad2.x)
+        else if(controller.x)
             winch.changePulleyPower(-INCREMENT);
 
         telemetry.addData("Tape power: ", winch.tapePower);

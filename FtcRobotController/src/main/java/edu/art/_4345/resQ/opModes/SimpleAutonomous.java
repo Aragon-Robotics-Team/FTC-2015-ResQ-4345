@@ -42,7 +42,7 @@ public class SimpleAutonomous extends LinearOpMode {
     private void driveForward(double inches) throws InterruptedException {
         drivetrain.arcadeDrive(1, 0);
         sleep(1000 * (long)(inches / INCHES_PER_SECOND));
-        drivetrain.tankDrive(0, 0);
+        drivetrain.arcadeDrive(0, 0);
     }
 
     private void turn(double degrees) throws InterruptedException {
