@@ -28,6 +28,13 @@ public class TriggerFlipper {
         extended = true;
     }
 
+    public void toggle() {
+        if (extended)
+            stow();
+        else
+            extend();
+    }
+
     public boolean isExtended() {
         return extended;
     }

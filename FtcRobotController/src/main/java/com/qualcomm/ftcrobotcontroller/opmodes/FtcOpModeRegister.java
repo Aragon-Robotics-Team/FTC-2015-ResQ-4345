@@ -28,9 +28,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
-import edu.art._4345.resQ.opModes.DrivetrainTest;
-import edu.art._4345.resQ.opModes.WinchDriveTest;
-import edu.art._4345.resQ.opModes.WinchTest;
+import edu.art._4345.resQ.opModes.*;
 
 /**
  * Register Op Modes.
@@ -43,6 +41,8 @@ public class FtcOpModeRegister implements OpModeRegister {
 
         manager.register("Drivetrain Test", DrivetrainTest.class);
         manager.register("Winch Test", WinchTest.class);
+        manager.register("Trigger Flipper Test", TriggerFlipperTest.class);
         manager.register("Winch Drive Test", WinchDriveTest.class);
+        manager.register("Tele Op", TeleOp.class);
     }
 }
