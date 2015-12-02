@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import edu.art._4345.resQ.subsystems.*;
 
 /**
- * Teleop Op mode combing all subsystems.
+ * Teleop Op mode combining all subsystems.
  */
 public class TeleOp extends OpMode {
 
@@ -14,11 +14,11 @@ public class TeleOp extends OpMode {
     private Drivetrain drivetrain;
     private TriggerFlipper leftFlipper, rightFlipper;
 
-    private final double INCREMENT = 0.005;
+    private final double TAPE_POWER = 0.25;
 
     @Override
     public void init() {
-        winch = new Winch(hardwareMap.dcMotor.get("tape_motor"), hardwareMap.dcMotor.get("aim_motor"), hardwareMap.dcMotor.get("pulley_motor"));
+        winch = new Winch(hardwareMap.dcMotor.get("tape_motor"), hardwareMap.dcMotor.get("aim_motor"));
         drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_drive"), hardwareMap.dcMotor.get("right_drive"));
         leftFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"), true);
         rightFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"), false);
@@ -40,9 +40,8 @@ public class TeleOp extends OpMode {
             while(gamepad2.b);
         }
 
-        //retracting/extending tape measure & string independently
-        winch.tape(gamepad2.left_stick_y * winch.tapePower);
-        winch.pulley(gamepad2.right_stick_y * winch.pulleyPower);
+        //retracting/extending tape measure
+        winch.tape(gamepad2.left_stick_y * TAPE_POWER);
 
         //aiming tape measure
         if (gamepad2.left_bumper)
@@ -51,22 +50,5 @@ public class TeleOp extends OpMode {
             winch.aim(-1);
         else
             winch.aim(0);
-
-        //controlling tape motor speed
-        if(gamepad2.dpad_up) {
-            winch.changeTapePower(INCREMENT);
-        }
-        else if(gamepad2.dpad_down) {
-            winch.changeTapePower(-INCREMENT);
-        }
-
-        //controlling pulley motor speed
-        if(gamepad2.y)
-            winch.changePulleyPower(INCREMENT);
-        else if(gamepad2.x)
-            winch.changePulleyPower(-INCREMENT);
-
-        telemetry.addData("Tape power: ", winch.tapePower);
-        telemetry.addData("Pulley power: ", winch.pulleyPower);
     }
 }
