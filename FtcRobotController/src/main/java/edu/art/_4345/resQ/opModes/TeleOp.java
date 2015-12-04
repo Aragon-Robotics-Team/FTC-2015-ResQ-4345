@@ -27,7 +27,12 @@ public class TeleOp extends OpMode {
     @Override
     public void loop() {
         //driving
-        drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+        if(gamepad2.left_trigger > 0.5) {
+            drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x, true);
+        }
+        else {
+            drivetrain.arcadeDrive(gamepad1.left_stick_y, gamped1.right_stick_x, false);
+        }
 
 
         //trigger flipper control
