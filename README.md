@@ -9,6 +9,7 @@ Sahith `sahith00` Bhamidipati
 #### Control Scheme
 - Driver  
 	- **LJ/RJ:** Drive train
+	- **LT:** Creep mode
 - Operator
 	- **A:** Left trigger flipper
 	- **B:** Right trigger flipper
