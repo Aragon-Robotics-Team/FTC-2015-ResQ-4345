@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.util.Range;
 public class Drivetrain {
 
     private DcMotor leftDrive, rightDrive;
-    private final float CREEP_SPEED;
+    private final float CREEP_SPEED = 0.5;
     
     public Drivetrain(DcMotor leftDrive, DcMotor rightDrive) {
         this.leftDrive = leftDrive;
