@@ -6,7 +6,8 @@ import com.qualcomm.robotcore.util.Range;
 public class Drivetrain {
 
     private DcMotor leftDrive, rightDrive;
-
+    private final float CREEP_SPEED;
+    
     public Drivetrain(DcMotor leftDrive, DcMotor rightDrive) {
         this.leftDrive = leftDrive;
         this.rightDrive = rightDrive;
@@ -15,16 +16,17 @@ public class Drivetrain {
         rightDrive.setDirection(DcMotor.Direction.FORWARD);
     }
 
-    public void tankDrive(float leftPower, float rightPower) {
-        leftDrive.setPower(leftPower);
-        rightDrive.setPower(rightPower);
-    }
-
-    public void arcadeDrive(float power, float turn) {
+    public void arcadeDrive(float power, float turn, boolean creep) {
         float leftPower = Range.clip(power - turn, -1, 1);
         float rightPower = Range.clip(power + turn, -1, 1);
-
-        leftDrive.setPower(leftPower);
-        rightDrive.setPower(rightPower);
+        
+        if(!creep) {
+            leftDrive.setPower(leftPower);
+            rightDrive.setPower(rightPower);
+        }
+        else {
+            leftDrive.setPower(leftPower * CREEP_SPEED);
+            rightDrive.setPower(rightPower * CREEP_SPEED);
+        }
     }
 }
