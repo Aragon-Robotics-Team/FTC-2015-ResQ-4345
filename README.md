@@ -6,6 +6,15 @@ Miles P. `mpolson64` Olson
 Chris `SourMongoose` Xiong  
 Sahith `sahith00` Bhamidipati
 
+#### Control Scheme
+- Driver  
+	- **LJ/RJ:** Drive train
+- Operator
+	- **A:** Left trigger flipper
+	- **B:** Right trigger flipper
+	- **LJ:** Extending/retracting tape measure
+	- **LB/LT:** Aiming tape measure
+
 This is the FTC Robot Controller app created by ART.Leonardo for use competing the 2015 FTC game ResQ.
 The core of the app comes from the FTC SDK provided to all teams, and is designed to work in conjunction with the FTC Driver Station app, which is availible through Google Play.
 All custom, ART subsystems and OpModes can be found in the edu.artLeonardo.* package.
