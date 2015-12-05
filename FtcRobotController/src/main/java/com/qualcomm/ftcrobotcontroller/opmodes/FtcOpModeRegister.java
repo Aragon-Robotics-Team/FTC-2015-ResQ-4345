@@ -1,16 +1,22 @@
 /* Copyright (c) 2014, 2015 Qualcomm Technologies Inc
+
 All rights reserved.
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted (subject to the limitations in the disclaimer below) provided that
 the following conditions are met:
+
 Redistributions of source code must retain the above copyright notice, this list
 of conditions and the following disclaimer.
+
 Redistributions in binary form must reproduce the above copyright notice, this
 list of conditions and the following disclaimer in the documentation and/or
 other materials provided with the distribution.
+
 Neither the name of Qualcomm Technologies Inc nor the names of its contributors
 may be used to endorse or promote products derived from this software without
 specific prior written permission.
+
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS
 LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -28,22 +34,27 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
-import edu.art._4345.resQ.opModes.*;
-
 /**
- * Register Op Modes.
- * If two Op Modes share a name, the app will register an error, so be careful.
+ * Register Op Modes
  */
 public class FtcOpModeRegister implements OpModeRegister {
 
-    public void register(OpModeManager manager) {
-        manager.register("NullOp", NullOp.class);
+  /**
+   * The Op Mode Manager will call this method when it wants a list of all
+   * available op modes. Add your op mode to the list to enable it.
+   *
+   * @param manager op mode manager
+   */
+  public void register(OpModeManager manager) {
 
-        //manager.register("Drivetrain Test", DrivetrainTest.class);
-        //manager.register("Winch Test", WinchTest.class);
-        //manager.register("Trigger Flipper Test", TriggerFlipperTest.class);
-        //manager.register("Winch Drive Test", WinchDriveTest.class);
-        manager.register("Tele Op", TeleOp.class);
-        manager.register("Floor Goal Autonomous", SimpleAutonomous.class);
-    }
+    /*
+     * register your op modes here.
+     * The first parameter is the name of the op mode
+     * The second parameter is the op mode class property
+     *
+     * If two or more op modes are registered with the same name, the app will display an error.
+     */
+
+    manager.register("NullOp", NullOp.class);
+  }
 }
