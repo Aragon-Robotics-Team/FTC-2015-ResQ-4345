@@ -34,8 +34,8 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
-//import edu.art._4345.resQ.opModes.SimpleAutonomous;
-//import edu.art._4345.resQ.opModes.TeleOp;
+import edu.art._4345.resQ.opModes.SimpleAutonomous;
+import edu.art._4345.resQ.opModes.TeleOp;
 import edu.art._4345.resQ.opModes.PullupTest;
 import edu.art._4345.resQ.subsystems.Pullup;
 
@@ -53,9 +53,8 @@ public class FtcOpModeRegister implements OpModeRegister {
   public void register(OpModeManager manager) {
 
       manager.register("NullOp", NullOp.class);
-      //manager.register("TeleOp", TeleOp.class);
-      //manager.register("Simple Auto", SimpleAutonomous.class);
+      manager.register("TeleOp", TeleOp.class);
+      manager.register("Simple Auto", SimpleAutonomous.class);
 
-      manager.register("Pullup Test", PullupTest.class);
   }
 }

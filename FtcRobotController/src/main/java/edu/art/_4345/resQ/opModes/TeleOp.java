@@ -13,6 +13,7 @@ public class TeleOp extends OpMode {
     private Drivetrain drivetrain;
     private TriggerFlipper leftFlipper, rightFlipper;
     private Plow plow;
+    private Pullup pullup;
 
     private boolean plowIsFront;
 
@@ -22,6 +23,7 @@ public class TeleOp extends OpMode {
         leftFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"), true);
         rightFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"), false);
         plow = new Plow(hardwareMap.servo.get("plow"));
+        pullup = new Pullup(hardwareMap.dcMotor.get("puller"), hardwareMap.dcMotor.get("aimer"));
 
         plowIsFront = false;
     }
@@ -56,6 +58,10 @@ public class TeleOp extends OpMode {
             plow.toggle();
             while(gamepad1.a);
         }
+
+        //puller control
+        pullup.pull(-1 * gamepad1.left_stick_y);
+        pullup.aim(-1 * gamepad1.right_stick_y);
 
     }
 }
