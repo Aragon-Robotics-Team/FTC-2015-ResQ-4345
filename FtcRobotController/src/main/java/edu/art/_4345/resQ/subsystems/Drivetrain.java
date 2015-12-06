@@ -11,8 +11,8 @@ public class Drivetrain {
         this.leftDrive = leftDrive;
         this.rightDrive = rightDrive;
 
-        leftDrive.setDirection(DcMotor.Direction.FORWARD);
-        rightDrive.setDirection(DcMotor.Direction.REVERSE);
+        leftDrive.setDirection(DcMotor.Direction.REVERSE);
+        rightDrive.setDirection(DcMotor.Direction.FORWARD);
     }
 
     public void tankDrive(float leftPower, float rightPower) {
@@ -21,8 +21,8 @@ public class Drivetrain {
     }
 
     public void arcadeDrive(float power, float turn) {
-        float leftPower = Range.clip(power + turn, -1, 1);
-        float rightPower = Range.clip(power - turn, -1, 1);
+        float leftPower = Range.clip(power - turn, -1, 1);
+        float rightPower = Range.clip(power + turn, -1, 1);
 
         leftDrive.setPower(leftPower);
         rightDrive.setPower(rightPower);
