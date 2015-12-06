@@ -36,8 +36,6 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import edu.art._4345.resQ.opModes.SimpleAutonomous;
 import edu.art._4345.resQ.opModes.TeleOp;
-import edu.art._4345.resQ.opModes.PullupTest;
-import edu.art._4345.resQ.subsystems.Pullup;
 
 /**
  * Register Op Modes
