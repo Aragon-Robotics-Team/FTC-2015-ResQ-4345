@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Pullup {
 
-    private final float AIMER_COEFFICIENT =0.25f;
+    private final float AIMER_COEFFICIENT = 0.25f;
     
     private DcMotor puller, aimer;
 

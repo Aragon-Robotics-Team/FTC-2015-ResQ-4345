@@ -25,7 +25,7 @@ public class Plow {
     }
 
     public void lift() {
-        plow.setPosition(LIFT_POSITION);
+        plow.setPosition(1);
         isDown = false;
     }
 
