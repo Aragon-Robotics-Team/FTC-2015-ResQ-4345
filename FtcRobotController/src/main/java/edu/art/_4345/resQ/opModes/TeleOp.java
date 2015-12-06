@@ -60,8 +60,18 @@ public class TeleOp extends OpMode {
         }
 
         //puller control
-        pullup.pull(-1 * gamepad1.left_stick_y);
-        pullup.aim(-1 * gamepad1.right_stick_y);
+        if(gamepad1.right_bumper) {
+            pullup.pull(-1 * gamepad1.right_trigger);
+        }
+        else {
+            pullup.pull(gamepad1.right_trigger);
+        }
+        if(gamepad1.left_bumper) {
+            pullup.aim(-1 * gamepad1.left_trigger);
+        }
+        else {
+            pullup.aim(gamepad1.left_trigger);
+        }
 
     }
 }
