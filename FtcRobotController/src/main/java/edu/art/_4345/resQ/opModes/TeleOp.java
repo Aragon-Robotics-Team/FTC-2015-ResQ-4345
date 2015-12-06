@@ -14,7 +14,7 @@ public class TeleOp extends OpMode {
     private TriggerFlipper leftFlipper, rightFlipper;
     private Plow plow;
 
-    private final double INCREMENT = 0.005;
+    private boolean plowIsFront;
 
     @Override
     public void init() {
@@ -22,13 +22,24 @@ public class TeleOp extends OpMode {
         leftFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_left"), true);
         rightFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper_right"), false);
         plow = new Plow(hardwareMap.servo.get("plow"));
+
+        plowIsFront = false;
     }
 
     @Override
     public void loop() {
         //driving
-        drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+        if(!plowIsFront) {
+            drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+        }
+        else {
+            drivetrain.arcadeDrive(-1 * gamepad1.left_stick_y, -1 * gamepad1.right_stick_x);
+        }
 
+        if(gamepad1.start) {
+            plowIsFront = true;
+            while(gamepad1.start);
+        }
 
         //trigger flipper control
         if(gamepad1.x) {
