@@ -4,20 +4,23 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Pullup {
 
-    private final float AIMER_COEFFICIENT = .125;
+    private final float AIMER_COEFFICIENT =0.25f;
     
-    private DcMotor pulley, aimer;
+    private DcMotor puller, aimer;
 
-    public Pullup(DcMotor pulley, DcMotor aimer) {
-        this.pulley = pulley;
+    public Pullup(DcMotor puller, DcMotor aimer) {
+        this.puller = puller;
         this.aimer = aimer;
+
+        puller.setDirection(DcMotor.Direction.REVERSE);
+        aimer.setDirection(DcMotor.Direction.REVERSE);
     }
 
     public void pull(float power) {
-        pully.setPower(power);
+        puller.setPower(power);
     }
 
-    public void aim(power) {
+    public void aim(float power) {
         aimer.setPower(power * AIMER_COEFFICIENT);
     }
 
