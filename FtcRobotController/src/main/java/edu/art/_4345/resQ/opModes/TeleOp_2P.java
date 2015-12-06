@@ -32,14 +32,20 @@ public class TeleOp_2P extends OpMode {
     public void loop() {
         //driving
         if(!plowIsFront) {
+
             drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
         }
         else {
-            drivetrain.arcadeDrive(-1 * gamepad1.left_stick_y, -1 * gamepad1.right_stick_x);
+            drivetrain.arcadeDrive(-1 * gamepad1.left_stick_y, gamepad1.right_stick_x);
         }
 
         if(gamepad1.start) {
-            plowIsFront = true;
+            if(plowIsFront) {
+                plowIsFront = false;
+            }
+            else {
+                plowIsFront = true;
+            }
             while(gamepad1.start);
         }
 
