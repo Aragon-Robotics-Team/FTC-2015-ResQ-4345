@@ -12,7 +12,7 @@ public class DriveTriggerOnly extends OpMode {
     @Override
     public void init() {
         drivetrain = new Drivetrain(hardwareMap.dcMotor.get("left_drive"), hardwareMap.dcMotor.get("right_drive"));
-        triggerFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper"));
+        triggerFlipper = new TriggerFlipper(hardwareMap.servo.get("trigger_flipper"), true);
     }
 
     @Override

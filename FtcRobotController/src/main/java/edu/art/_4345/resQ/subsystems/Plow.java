@@ -7,20 +7,34 @@ import com.qualcomm.robotcore.hardware.Servo;
  */
 public class Plow {
 
+    private final double LIFT_POSITION = 1;
+
     private Servo plow;
-    private final double LIFT_POSITION = 1;                 //dummy value
+    private boolean isDown;
 
     public Plow(Servo plow) {
         this.plow = plow;
-
         plow.scaleRange(0, LIFT_POSITION);
+
+        isDown = false;
     }
 
     public void block() {
         plow.setPosition(0);
+        isDown = true;
     }
 
     public void lift() {
         plow.setPosition(LIFT_POSITION);
+        isDown = false;
+    }
+
+    public void toggle() {
+        if(isDown) {
+            lift();
+        }
+        else {
+            block();
+        }
     }
 }

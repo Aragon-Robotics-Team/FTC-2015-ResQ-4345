@@ -26,5 +26,9 @@ public class PlowTest extends OpMode {
         if(gamepad1.left_bumper) {
             plow.block();
         }
+        if(gamepad1.a) {
+            plow.toggle();
+            while(gamepad1.a);
+        }
     }
 }
