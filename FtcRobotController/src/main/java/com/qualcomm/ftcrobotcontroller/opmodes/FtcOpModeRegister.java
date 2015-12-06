@@ -34,6 +34,10 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
+import edu.art._4345.resQ.opModes.PlowTest;
+import edu.art._4345.resQ.opModes.TeleOp;
+import edu.art._4345.resQ.subsystems.Plow;
+
 /**
  * Register Op Modes
  */
@@ -55,6 +59,8 @@ public class FtcOpModeRegister implements OpModeRegister {
      * If two or more op modes are registered with the same name, the app will display an error.
      */
 
-    manager.register("NullOp", NullOp.class);
+      manager.register("NullOp", NullOp.class);
+      manager.register("PlowTest", PlowTest.class);
+      manager.register("TeleOp", TeleOp.class);
   }
 }
