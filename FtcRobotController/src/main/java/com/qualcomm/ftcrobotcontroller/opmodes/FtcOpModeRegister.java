@@ -35,6 +35,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import edu.art._4345.resQ.opModes.PlowTest;
+import edu.art._4345.resQ.opModes.TeleOp;
 
 /**
  * Register Op Modes
@@ -50,7 +51,7 @@ public class FtcOpModeRegister implements OpModeRegister {
   public void register(OpModeManager manager) {
 
       manager.register("NullOp", NullOp.class);
-      manager.register("Plow Test", PlowTest.class);
+      manager.register("TeleOp", TeleOp.class);
 
   }
 }

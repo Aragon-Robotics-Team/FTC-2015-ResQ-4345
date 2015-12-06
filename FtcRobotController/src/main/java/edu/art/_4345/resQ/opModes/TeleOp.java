@@ -31,23 +31,20 @@ public class TeleOp extends OpMode {
 
 
         //trigger flipper control
-        if(gamepad2.a) {
+        if(gamepad1.x) {
             leftFlipper.toggle();
-            while(gamepad2.a);
+            while(gamepad1.x);
         }
-        else if(gamepad2.b) {
+        else if(gamepad1.y) {
             rightFlipper.toggle();
-            while(gamepad2.b);
+            while(gamepad1.y);
         }
 
         //plow control
-        if(gamepad1.right_bumper) {
-            plow.lift();
+        if(gamepad1.a) {
+            plow.toggle();
+            while(gamepad1.a);
         }
-        if(gamepad1.left_bumper) {
-            plow.block();
-        }
-
 
     }
 }
