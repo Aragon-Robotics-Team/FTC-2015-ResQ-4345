@@ -13,7 +13,7 @@ public class PullupTest extends OpMode{
 
     @Override
     public void init() {
-        pullup = new Pullup(hardwareMap.dcMotor.get("pulley"), hardwareMap.dcMotor.get("aimer"));
+        pullup = new Pullup(hardwareMap.dcMotor.get("puller"), hardwareMap.dcMotor.get("aimer"));
     }
 
     @Override
