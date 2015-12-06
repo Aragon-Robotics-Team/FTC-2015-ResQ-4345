@@ -36,6 +36,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import edu.art._4345.resQ.opModes.SimpleAutonomous;
 import edu.art._4345.resQ.opModes.TeleOp;
+import edu.art._4345.resQ.opModes.TeleOp_2P;
 
 /**
  * Register Op Modes
@@ -52,6 +53,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
       manager.register("NullOp", NullOp.class);
       manager.register("TeleOp", TeleOp.class);
+      manager.register("TeleOp_2P", TeleOp_2P.class);
       manager.register("Simple Auto", SimpleAutonomous.class);
 
   }
